@@ -30,3 +30,15 @@ else
   echo "File was created"
 fi
 ```
+
+## basename
+```
+file_path=$(fzf)
+echo $(basename $file_path)
+```
+
+### dirname
+```
+dir_path=$(fzf)
+echo ${dir_path%/*}
+```
