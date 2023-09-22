@@ -35,6 +35,13 @@ fi
 ```
 file_path=$(fzf)
 echo $(basename $file_path)
+
+file_name=$(basename $file);
+echo $file_name;
+base_file_name=${file_name%.*}
+echo $base_file_name;
+file_extention=${file_name##*.}
+echo $file_extention;
 ```
 
 ### dirname
