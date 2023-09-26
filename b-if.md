@@ -64,3 +64,12 @@ fi
 -w write permision
 ```
 
+### go up
+
+```
+
+ ancestor() {
+   local n=${1:-1}
+   (for ((; n != 0; n--)); do cd $(dirname ${PWD}); done; pwd)
+ }
+```
