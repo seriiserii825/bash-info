@@ -57,3 +57,26 @@ case $choice in
 esac
 
 ```
+
+### dynamic options
+```
+# Define an array of options
+options=("option1" "option2" "option3")
+
+# Prompt the user to select an option
+echo "Select an option:"
+for i in "${!options[@]}"; do
+  echo "$i) ${options[i]}"
+done
+
+# Read the user's choice
+read choice
+
+# Use a case statement to perform actions based on the choice
+case "$choice" in
+  0) echo "You selected option1";;
+  1) echo "You selected option2";;
+  2) echo "You selected option3";;
+  *) echo "Invalid choice";;
+esac
+```
