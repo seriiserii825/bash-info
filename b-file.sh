@@ -7,6 +7,17 @@ file_extention=${file_name##*.}
 word_before_dash="${file_name%%-*}"
 capital_name="${file_name^}"
 
+#buffer to file
+acf_path=$(touch ~/Downloads/acf.txt)
+echo "$(xclip -o -selection clipboard)" > $acf_path
+
+#file to buffer
+xclip -sel clip < $acf_path
+
+# read file
+while read -r line; do
+  echo "line: $line"
+done < "$acf_path"
 
 # get path of current file
 current_path=$(pwd);
