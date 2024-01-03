@@ -1,6 +1,16 @@
 ### check if have args
 
 ```
+if [ 0 -eq 1 ]; then
+  echo '0=1'
+elif [ 0 -eq 2 ]; then
+  echo '0=2'
+else
+  echo '0!=2'
+fi
+```
+
+```
 if [ ! $# -gt 0 ]; then
     echo "Insert one or * image name"
     exit 1
