@@ -101,3 +101,40 @@ while [ "$anew" = yes ]; do
    done
 done
 ```
+
+### exit from nested select
+```
+while true; do
+    select outer_choice in "Continue" "Exit"; do
+        case $outer_choice in
+            "Continue")
+                echo "Continuing..."
+                while true; do
+                    select inner_choice in "Inner Continue" "Inner Exit"; do
+                        case $inner_choice in
+                            "Inner Continue")
+                                echo "Inner continuing..."
+                                # Your inner loop logic here
+                                ;;
+                            "Inner Exit")
+                                echo "Exiting inner loop..."
+                                break 2  # Breaks out of both inner and outer loops
+                                ;;
+                            *)
+                                echo "Invalid inner choice. Try again."
+                                ;;
+                        esac
+                    done
+                done
+                ;;
+            "Exit")
+                echo "Exiting..."
+                exit
+                ;;
+            *)
+                echo "Invalid choice. Try again."
+                ;;
+        esac
+    done
+done
+```
