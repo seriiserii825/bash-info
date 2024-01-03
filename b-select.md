@@ -80,3 +80,24 @@ case "$choice" in
   *) echo "Invalid choice";;
 esac
 ```
+
+### go back from select
+```
+anew=yes
+while [ "$anew" = yes ]; do
+   anew=no
+   select x in a b c d
+   do
+      case $x in
+         a) echo "a"
+            anew=yes
+            break;;
+         b) echo "b";;
+         c) echo "c";;
+         d) echo "You are now exiting the program"
+            break;;
+         *) echo "Invalid entry. Please try an option on display";;
+      esac
+   done
+done
+```
