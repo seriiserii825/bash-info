@@ -46,3 +46,11 @@ example1
 example1
 example2
 ```
+
+## string contains substring
+```
+if [[ "$file_path" != *"json"* ]]; then
+  echo "${tmagenta}File is not json${treset}"
+  exit 1
+fi
+```
