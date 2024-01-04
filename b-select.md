@@ -1,5 +1,13 @@
 ### select
 
+### dynamic select
+```
+  select type in "page" "post_type" "taxonomy" "user" "comment" "option" "menu" "widget" "block" "exit"; do
+    [[ $type ]] || continue
+    break
+  done
+```
+
 ```
 select car in BMW MERCEDES TESLA ROVER TOYOTA
 do
