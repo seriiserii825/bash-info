@@ -1,4 +1,15 @@
 ### select
+```
+  backup_files=$(ls -t | grep '\.wpress')
+
+  PS3='Please enter your choice: '
+  select backup_file in $backup_files
+  do
+    wp ai1wm restore $backup_file
+    wp rewrite flush
+    exit 0
+  done
+```
 
 ### dynamic select
 ```
