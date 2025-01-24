@@ -1,4 +1,4 @@
-### array
+### array documentation
 
 # Declare arrays for titles and texts
 titles=()
