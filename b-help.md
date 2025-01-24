@@ -1,4 +1,4 @@
-### help
+## help
 
 ```
 if [ "$1" == "-help" ] || [ "$1" == "--help" ]; then
